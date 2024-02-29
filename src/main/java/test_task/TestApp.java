@@ -1,19 +1,27 @@
 package test_task;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class TestApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите число:");
-        int digit = scanner.nextInt();
+        try {
 
-        if (digit > 7) {
-            System.out.println("Привет");
+            System.out.println("Введите число:");
+            int digit = scanner.nextInt();
+
+            if (digit > 7) {
+                System.out.println("Привет");
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Ошибка: Введите целое число.");
+            scanner.nextLine();
         }
 
         System.out.println();
+
         System.out.println("Введите имя:");
         String name = scanner.next();
 
@@ -30,12 +38,16 @@ public class TestApp {
         String[] elements = input.split(" ");
 
         for (String element : elements) {
-            int num = Integer.parseInt(element);
-            if (num % 3 == 0) {
-                System.out.println(num);
+            try {
+
+                int num = Integer.parseInt(element);
+                if (num % 3 == 0) {
+                    System.out.println(num);
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Ошибка: введите числовое значение.");
             }
         }
-
     /*
     Задание #2:
 
