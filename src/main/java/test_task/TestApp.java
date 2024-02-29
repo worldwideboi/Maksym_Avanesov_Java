@@ -5,12 +5,16 @@ import java.util.Scanner;
 public class TestApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Введите число:");
         int digit = scanner.nextInt();
 
         if (digit > 7) {
             System.out.println("Привет");
         }
 
+        System.out.println();
+        System.out.println("Введите имя:");
         String name = scanner.next();
 
         if (name.equals("Вячеслав")) {
@@ -19,6 +23,8 @@ public class TestApp {
             System.out.println("Нет такого имени");
         }
 
+        System.out.println();
+        System.out.println("Элементы массива, кратные 3:");
         String input = scanner.nextLine();
         input = scanner.nextLine();
         String[] elements = input.split(" ");
